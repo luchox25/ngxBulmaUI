@@ -1,0 +1,14 @@
+<input class="input form-control"
+  [attr.placeholder]="placeholder ? placeholder : ''"
+  [ngClass]="{'is-hovered': state === 'hovered',
+      'is-focused': state === 'focused',
+      'is-rounded': isRounded,
+      'is-static': isStatic }"
+  [disabled]="disabled"
+  [attr.readonly]="readonly ? 'readonly' : null"
+  [ngbColor]="color"
+  [ngbSize]="size"
+  [value]="value"
+  (input)="onChange($event.target.value)"
+  (blur)="onTouched()">
+    

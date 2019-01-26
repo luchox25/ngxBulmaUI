@@ -2,5 +2,45 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "ngx-bulma": {
+      "root": "projects/ngx-bulma",
+      "sourceRoot": "projects/ngx-bulma/src",
+      "projectType": "library",
+      "prefix": "ngb",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-bulma/tsconfig.lib.json",
+            "project": "projects/ngx-bulma/ng-package.json",
+            "styles": [
+              "src/styles.scss"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-bulma/src/test.ts",
+            "tsConfig": "projects/ngx-bulma/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-bulma/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-bulma/tsconfig.lib.json",
+              "projects/ngx-bulma/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ngx-bulma"
 }
