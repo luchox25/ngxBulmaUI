@@ -3,12 +3,16 @@ import { CommonModule } from '@angular/common';
 import { ColorDirective } from './color.directive';
 import { SizeDirective } from './size.directive';
 
+const directives = [
+    ColorDirective,
+    SizeDirective
+];
+
 @NgModule({
-  declarations: [ColorDirective, SizeDirective],
+  declarations: [...directives],
   imports: [
     CommonModule
   ],
-  exports: [ColorDirective, SizeDirective]
+  exports: [...directives]
 })
-export class DirectivesModule {
-}
+export class DirectivesModule { }

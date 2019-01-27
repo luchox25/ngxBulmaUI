@@ -19,11 +19,11 @@
       "dom"
     ],
     "paths": {
-      "ngx-bulma": [
-        "dist/ngx-bulma"
+      "ngx-bulma-ui": [
+        "dist/ngx-bulma-ui"
       ],
-      "ngx-bulma/*": [
-        "dist/ngx-bulma/*"
+      "ngx-bulma-ui/*": [
+        "dist/ngx-bulma-ui/*"
       ]
     }
   }

@@ -1,6 +1,6 @@
 {
     "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
     "lib": {
-      "entryFile": "./projects/ngx-bulma/src/index.ts"
+      "entryFile": "./projects/ngx-bulma-ui/src/public_api.ts"
     }
   }

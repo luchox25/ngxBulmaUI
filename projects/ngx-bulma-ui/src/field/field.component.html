@@ -1,0 +1,27 @@
+<div class="field" [ngClass]="{'is-horizontal': isHorizontal}">
+  <div *ngIf="label && isHorizontal" class="field-label" [ngbSize]="size">
+    <label class="label">
+      {{ label }}
+    </label>
+  </div>
+  <label class="label" *ngIf="label && !isHorizontal">
+    {{ label }}
+  </label>
+  <div [ngClass]="{'control': !isHorizontal,
+          'field-body': isHorizontal,
+          'is-loading': isLoading,
+          'has-icons-left': iconLeft,
+          'has-icons-right': iconRight}"
+    [ngbSize]="size">
+    <ng-content></ng-content>
+    <span *ngIf="iconLeft" class="icon is-left">
+      <fa-icon [icon]="iconLeft"></fa-icon>
+    </span>
+    <span *ngIf="iconRight" class="icon is-right" [ngbSize]="size">
+      <fa-icon [icon]="iconRight"></fa-icon>
+    </span>
+  </div>
+  <p class="help" *ngIf="message" [ngbColor]="msgColor">
+    {{ message }}
+  </p>
+</div>
