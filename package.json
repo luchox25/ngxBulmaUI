@@ -4,18 +4,17 @@
   "author": "Luis Catano <luchoad17@gmail.com> (https://github.com/luchox25)",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
+    "build:lib": "ng build --project ngx-bulma-ui",
+    "build:demo": "ng build --project demo",
+    "test:lib": "ng test --project ngx-bulma-ui",
+    "test:demo": "ng test --project ngx-bulma-ui",
     "lint": "ng lint",
-    "e2e": "ng e2e",
     "packagr": "ng-packagr -p ng-package.json",
-    "packagr-dev": "ng-packagr -p ng-package.demo.json",
-    "packagr-dev-watch": "onchange \"projects/ngx-bulma-ui/src/**/*.*\" -- npm run packagr-dev",
-    "start-demo": "ng serve --project demo",
-    "dev-demo": "concurrently --kill-others \"npm run packagr-dev && npm run start-demo\" \"npm run packagr-dev-watch\""
+    "packagr:watch": "onchange \"projects/ngx-bulma-ui/src/**/*.*\" -- npm run packagr-dev",
+    "start:demo": "ng serve --project demo",
+    "start:dev": "concurrently --kill-others \"npm run packagr && npm run start:demo\" \"npm run packagr:watch\""
   },
-  "license": "(MIT OR Apache-2.0)",
+  "license": "MIT",
   "private": false,
   "repository": {
     "type": "git",
