@@ -97,10 +97,16 @@ export class InputComponent implements ControlValueAccessor, OnInit {
 
   public registerOnChange(fn: any): void {
     this.onChange = fn;
+    this._renderer.listen(this._el.nativeElement, 'input', (event) => {
+      this.onChange(event.target.value);
+    });
   }
 
   public registerOnTouched(fn: any): void {
     this.onTouched = fn;
+    this._renderer.listen(this._el.nativeElement, 'blur', (event) => {
+      this.onTouched();
+    });
   }
 
   public setDisabledState?(isDisabled: boolean): void {
