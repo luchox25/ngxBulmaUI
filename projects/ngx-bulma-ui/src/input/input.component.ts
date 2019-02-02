@@ -81,12 +81,12 @@ export class InputComponent implements ControlValueAccessor, OnInit {
   }
 
   get value(): string {
-    return this._value;
+    return this._value ? this._value : '';
   }
 
   set value(val: string) {
     if (val !== this._value) {
-        this._value = val;
+        this._value = val ? val : '';
         this.onChange(val);
     }
   }

@@ -24,7 +24,8 @@
       ],
       "ngx-bulma-ui/*": [
         "dist/ngx-bulma-ui/*"
-      ]
+      ],
+      "ngx-bulma-ui-dev": ["./dist"]
     }
   }
 }
